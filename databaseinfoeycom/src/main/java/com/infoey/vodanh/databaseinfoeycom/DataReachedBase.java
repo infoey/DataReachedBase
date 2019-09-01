@@ -15,13 +15,16 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.infoey.vodanh.databaseinfoeycom.MainActivity.dater;
-import static com.infoey.vodanh.databaseinfoeycom.MainActivity.json;
-
 public class DataReachedBase extends AsyncTask<Void,Void,String> {
     public static String data,datasec,datathi,datafou = "";
     public static String datafif,datase,datasev,dataeig,nindata = "";
     private final TaskListener taskListener;
+    public static String website = "https://";
+    public static String websiter = "databaseinfoey.";
+    public static String websita = website+websiter;
+    public static String name = "netlify.com/";
+    public static String json = "main.txt";
+    public static String dater = websita+name;
     public static String sinParsed = "";
     public static String sivParsed = "";
     public static String sibParsed = "";
