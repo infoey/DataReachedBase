@@ -15,8 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static com.infoey.vodanh.databaseinfoeycom.Mainactivity.dater;
-import static com.infoey.vodanh.databaseinfoeycom.Mainactivity.json;
+import static com.infoey.vodanh.databaseinfoeycom.MainActivity.dater;
+import static com.infoey.vodanh.databaseinfoeycom.MainActivity.json;
 
 public class DataReachedBase extends AsyncTask<Void,Void,String> {
     public static String data,datasec,datathi,datafou = "";
