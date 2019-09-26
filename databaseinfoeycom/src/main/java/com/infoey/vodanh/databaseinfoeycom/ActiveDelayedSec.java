@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import static com.infoey.vodanh.databaseinfoeycom.MainActivity.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,25 +15,20 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class DataReachedBase extends AsyncTask<Void,Void,String> {
-    public static String data,datasec,datathi,datafou = "";
-    public static String datafif,datase,datasev,dataeig,nindata = "";
+public class ActiveDelayedSec extends AsyncTask<Void, Void, String> {
+    public static String data = "";
+    public static String datar = "";
+    public static String datas = "";
+    public static String Lead = "";
     private final TaskListener taskListener;
-    public static String website = "https://";
-    public static String websiter = "databaseinfoey.";
-    public static String websita = website+websiter;
-    public static String name = "netlify.com/";
-    public static String json = "main.txt";
-    public static String dater = websita+name;
-    public static String sinParsed = "";
-    public static String sivParsed = "";
-    public static String sibParsed = "";
-    public static String simParsed = "";
+    public static String Readercaling = "";
+    public static String Streamhader = "";
+    public static String Splashhandel = "";
+    public static String Splashreader = "";
     public static String siqParsed = "";
-    private String moviedata,moviesecdata,moviethidata;
-    private String moviefoudata,moviefifdata,moviesedata;
-    private String moviesevdata,movieeigdata,movienindata;
-    public DataReachedBase(Activity activity){
+    public static String splashactivity, bufferactive;
+    public static String splashscreen, ConnectExp;
+    public ActiveDelayedSec(Activity activity){
         taskListener = (TaskListener) activity;
     }
     @Override
@@ -52,8 +47,10 @@ public class DataReachedBase extends AsyncTask<Void,Void,String> {
             JSONArray JA = new JSONArray(date);
             for (int i = 0; i < JA.length(); i++) {
                 JSONObject JO = (JSONObject) JA.get(i);
-                moviedata = "" + JO.get("website");moviesecdata = "" + JO.get("secwebsite");
-                moviethidata = "" + JO.get("thiwebsite");moviefoudata = "" + JO.get("fouwebsite");
+                splashactivity = "" + JO.get("website"); bufferactive = "" + JO.get("secwebsite");
+                splashscreen = "" + JO.get("thiwebsite"); ConnectExp = "" + JO.get("fouwebsite");
+                Readercaling = "" + JO.get("sixthwebsite"); Streamhader = "" + JO.get("seventhwebsite");
+                Splashhandel = "" + JO.get("eighthwebsite"); Splashreader = "" + JO.get("ninthwebsite");
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -63,7 +60,7 @@ public class DataReachedBase extends AsyncTask<Void,Void,String> {
             e.printStackTrace();
         }
         try {
-            URL url = new URL(moviedata);
+            URL url = new URL(splashactivity);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -78,14 +75,14 @@ public class DataReachedBase extends AsyncTask<Void,Void,String> {
             e.printStackTrace();
         }
         try {
-            URL url = new URL(moviesecdata);
+            URL url = new URL(bufferactive);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String lines = "";
-            while (lines != null) {
-                lines = bufferedReader.readLine();
-                datasec = datasec + lines;
+            String line = "";
+            while (line != null) {
+                line = bufferedReader.readLine();
+                Lead = Lead + line;
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -93,14 +90,14 @@ public class DataReachedBase extends AsyncTask<Void,Void,String> {
             e.printStackTrace();
         }
         try {
-            URL url = new URL(moviethidata);
+            URL url = new URL(splashscreen);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String linethi = "";
-            while (linethi != null) {
-                linethi = bufferedReader.readLine();
-                datathi = datathi + linethi;
+            String line = "";
+            while (line != null) {
+                line = bufferedReader.readLine();
+                datas = datas + line;
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -108,14 +105,14 @@ public class DataReachedBase extends AsyncTask<Void,Void,String> {
             e.printStackTrace();
         }
         try {
-            URL url = new URL(moviefoudata);
+            URL url = new URL(ConnectExp);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-            String linefou = "";
-            while (linefou != null) {
-                linefou = bufferedReader.readLine();
-                datafou = datafou + linefou;
+            String line = "";
+            while (line != null) {
+                line = bufferedReader.readLine();
+                datar = datar + line;
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -130,3 +127,4 @@ public class DataReachedBase extends AsyncTask<Void,Void,String> {
         super.onPostExecute(s);
     }
 }
+

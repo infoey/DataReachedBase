@@ -3,7 +3,8 @@
     package="com.infoey.vodanh.databaseinfoeycom">
 
     <application>
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Main2Activity" />
     </application>
 
 </manifest>
